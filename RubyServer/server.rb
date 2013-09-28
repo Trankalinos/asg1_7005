@@ -19,12 +19,14 @@ class Server
     Thread.start(server.accept) do |client|
     client.puts "Hello the time is #{Time.now}"
 
-    filename = client.readline
 
-    puts "Reading contents of #{filename}"
 
-    destinationFile = File.open('./text.txt', 'wb')
-    destinationFile.print filename
+      file = client.read
+      puts "Reading contents of #{file}"
+      fileComplete = File.open('./text.txt', 'w+t')
+      fileComplete.print file
+
+
 
     puts "Done"
     client.close
@@ -33,6 +35,7 @@ class Server
 
 
 
+  server.close
 
 
 end

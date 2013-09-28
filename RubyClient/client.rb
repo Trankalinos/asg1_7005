@@ -50,14 +50,14 @@ class Client
   # Receive the binary or text file from the server.
   def getFile
     data = socket.read
-    destinationFile = File.open('text.txt', 'wb')
+    destinationFile = File.open('text.txt', 'wt')   # Write - Text
     destinationFile.print data
     destinationFile.close
   end
 
   # Delivers the binary or text file to the server
   def sendFile
-    file = open('./text.txt', 'rb')
+    file = open('./text.txt', 'rt')    # Read - Text
     fileTransfer = file.read
     socket.puts(fileTransfer)
   end
