@@ -1,7 +1,7 @@
 package JavaServer;
 
 /**
- * This application's purpose is to either listen for connections from clients
+ * This application's purpose is to listen for connections from clients
  * and once the connection is established, it responds to file transfer commands
  * from the clients.
  * 
@@ -9,6 +9,13 @@ package JavaServer;
  * GET to request a file from the server. Client uses SEND to send a file to the
  * server.
  * 
+ * In this application, both members have provided supplementary files to
+ * demonstrate the use of TCP and Socket programming. The code also works with
+ * each other, resulting in cross-platform compatibility.
+ * 
+ * Usage of JavaServer:
+ * 
+ * java JavaServer
  * 
  * @author  David Tran      Java
  * @partner Martin Javier   Ruby
@@ -26,63 +33,146 @@ import java.net.Socket;
 
 public class JavaServer {
 
+    public JavaServer() {};
     /**
      * @param args the command line arguments
      */
+    static private final int BUFFER = 2048;
+    static private Socket sock = null;
+    static private int count;
+    
     public static void main(String[] args) {
-        if(args[0].toString().equalsIgnoreCase("GET")) {
-            GET(args[1]);
-        } else if (args[0].toString().equalsIgnoreCase("SEND")) {
-            SEND(args[1]);
-        } else {
-            System.out.println("Java Socket File Transfer");
-            System.out.println("GET [fileName] - retrieves the specified file and transfers to client.");
-            System.out.println("SEND [fileName] - sends a file to the server from the client.");    
-        }
-    }
-    
-    public static void GET(String fileName) {
-        try {
-            Socket sock = new Socket("127.0.0.1", 7005);
-            byte[] mybytearray = new byte[2048];
-            InputStream is = sock.getInputStream();
-            FileOutputStream fos = new FileOutputStream("Flight.docx");
-            BufferedOutputStream bos = new BufferedOutputStream(fos);
-            
-            int count;
-            
-            while ((count = is.read(mybytearray)) >= 0) {
-                bos.write(mybytearray, 0, count);
-            }
-            
-            bos.close();
-            sock.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public static void SEND(String fileName) {
         try {
             ServerSocket servsock = new ServerSocket(7005);
-            File myFile = new File(fileName);
-            int count;
+            System.out.println("Listening for connections...");
             while (true) {
-              Socket sock = servsock.accept();
-              byte[] mybytearray = new byte[2048];
-              BufferedInputStream bis = new BufferedInputStream(new FileInputStream(myFile));
+              sock = servsock.accept();
+              System.out.println("Connected! Host: " + servsock.getInetAddress().getHostAddress()
+                      + " port: " + servsock.getLocalPort());
 
-              OutputStream os = sock.getOutputStream();
+              InputStream in = sock.getInputStream();
               
-              while((count = bis.read(mybytearray)) >= 0) {
-                  os.write(mybytearray, 0, count);
-                  os.flush();
-              }
-              
+              // Listen for GET or SEND packet,
+              // then call the appropriate method.
+              listen(in);
+
               sock.close();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    static public void GET(String fileName) {
+        // send to client
+        System.out.println("GET() method called.");
+        try {
+            File myFile = new File(fileName);
+            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(myFile));
+            OutputStream os = sock.getOutputStream();
+            byte[] byteArray = new byte[BUFFER];
+            while((count = bis.read(byteArray)) >= 0) {
+                  os.write(byteArray, 0, count);
+                  os.flush();
+            } 
+            System.out.println("File Transfer Finished: " + fileName + ".");
+            os.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    static public void SEND(String fileName) {
+        // receive from client
+        System.out.println("SEND() method called.");
+        try {
+            File myFile = new File(fileName);
+            InputStream is = sock.getInputStream();
+            
+            FileOutputStream fos = new FileOutputStream(myFile);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            
+            byte[] byteArray = new byte[BUFFER];
+            while ((count = is.read(byteArray)) >= 0) {
+                bos.write(byteArray, 0, count);
+            }
+            System.out.println("File Transfer finished: " + fileName + ".");
+            fos.close();
+            bos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    static public void sendPacket(String str, OutputStream sout) {
+        byte[] bbuf = str.getBytes();
+
+        try {
+            sout.write(bbuf);
+            System.out.println("Sending packet: " + str.toString() + " ...");
+        } catch (IOException ioe) {
+            System.err.println("Error with Packet transmission. Terminating connection.");
+            return;
+        }
+    }
+    
+    static public void listen(InputStream istr) {
+        byte[] buf = new byte[BUFFER];
+        int len;
+        while (true) {
+            try {
+                len = istr.read(buf, 0, BUFFER);
+            }
+            catch (IOException ioe) {
+                System.err.println("Error with Packet transmission. Terminating connection.");
+                break;	// probably a socket ABORT; treat as a close
+            }
+            
+            if (len == -1) break;
+            String str = "";
+            str = new String(buf, 0, len);
+            System.out.println("Received: '" + str + "' from Host.");
+
+            if (str.toString().equalsIgnoreCase("GET")) {
+                try {
+                    sendPacket("ACK", sock.getOutputStream());
+                    System.out.println("Calling GET() Method.");
+                    Thread.sleep(2000);
+                    GET("text.txt");
+                } catch (IOException ioe) {
+                    System.err.println("ERROR: COULD NOT SEND PACKET!");
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+                
+            } else if (str.toString().equalsIgnoreCase("SEND")) {
+                try {
+                    sendPacket("ACK", sock.getOutputStream());
+                    System.out.println("Calling SEND() Method.");
+                    SEND("Flight.docx");
+                    Thread.sleep(2000);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            } else {
+                // Invalid packet. Terminate the session.
+                System.err.println("Packet content invalid.");
+                break;
+            }
+        }
+        
+        try {
+            istr.close();
+        } catch (IOException ioe) {
+            System.err.println("Error: Bad Stream Close");
+            return;
+        }
+            
     }
 }
