@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RubyClient/client_extreme.rb" afterPath="$PROJECT_DIR$/RubyClient/client_extreme.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RubyServer/server_extreme.rb" afterPath="$PROJECT_DIR$/RubyServer/server_extreme.rb" />
-    </list>
+    <list default="true" id="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" name="Default" comment="" />
     <ignored path="asg1_7005.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380589445784" ignored="false" />
