@@ -29,7 +29,7 @@ class ServerExtreme
 
       # Server is responding to "SEND" request for to be received
       if request == "SEND"
-        filename = client.gets
+        filename = client.gets.chomp
         puts "Reading contents of #{filename}"
         raw_data = client.read
         # It iterates through the file and saves the data that the client had sent (upload).

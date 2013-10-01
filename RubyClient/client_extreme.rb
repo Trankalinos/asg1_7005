@@ -35,6 +35,7 @@ class ClientExtreme
       file.write(raw_data)
       file.close
     end
+    puts "Contents: #{raw_data}"
   # Delivers the binary text file to the server
   elsif response == 'SEND'
     socket.puts response

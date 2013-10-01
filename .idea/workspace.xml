@@ -12,8 +12,8 @@
     <file path="/server.rb" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380586176285" ignored="false" />
     <file path="/test.txt" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380526662511" ignored="false" />
     <file path="$USER_HOME$/RubymineProjects/Server3/server.rb" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380586242645" ignored="false" />
-    <file path="/server_extreme.rb" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380618682288" ignored="false" />
-    <file path="/client_extreme.rb" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380618259383" ignored="false" />
+    <file path="/server_extreme.rb" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380648373822" ignored="false" />
+    <file path="/client_extreme.rb" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380648367045" ignored="false" />
     <file path="/temp.rb" changelist="0f2cce73-5d4f-4c42-bb52-6c6076d2c665" time="1380618704070" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client_extreme.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="client_extreme.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyClient/client_extreme.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="4" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.52517986">
+            <state line="6" column="22" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,16 +55,16 @@
       <file leaf-file-name="server.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyServer/server.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="26" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
+            <state line="3" column="17" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server_extreme.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="server_extreme.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RubyServer/server_extreme.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="42" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.0">
+            <state line="31" column="36" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5179856">
               <folding />
             </state>
           </provider>
@@ -507,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubyServer/server.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RubyClient/client.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="10" selection-start="983" selection-end="1016" vertical-scroll-proportion="0.0">
@@ -528,16 +521,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RubyServer/server_extreme.rb">
+    <entry file="file://$PROJECT_DIR$/RubyServer/server.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="42" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.0">
+        <state line="3" column="17" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RubyClient/client_extreme.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="4" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.52517986">
+        <state line="6" column="22" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RubyServer/server_extreme.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="36" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5179856">
           <folding />
         </state>
       </provider>
