@@ -58,10 +58,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server_extreme.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="server_extreme.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RubyServer/server_extreme.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="36" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5179856">
+            <state line="24" column="21" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaServer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaServer/src/JavaServer/JavaServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaClient.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaClient/src/JavaClient/JavaClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="31" selection-start="3108" selection-end="3111" vertical-scroll-proportion="-2.1567163">
               <folding />
             </state>
           </provider>
@@ -169,6 +187,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="RubyClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asg1_7005" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asg1_7005" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asg1_7005" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asg1_7005" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaClient" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaClient" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -436,13 +490,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RubyServer/server.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="30" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RubyClient/client.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -534,7 +581,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RubyServer/server_extreme.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="36" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5179856">
+        <state line="24" column="21" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaServer/src/JavaServer/JavaServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaClient/src/JavaClient/JavaClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="31" selection-start="3108" selection-end="3111" vertical-scroll-proportion="-2.1567163">
           <folding />
         </state>
       </provider>
