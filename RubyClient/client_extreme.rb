@@ -1,5 +1,5 @@
 # Assignment 1 - TCP/IP Socket Programming Client
-# Version 1.2
+# Version 2.2
 # Author: Martin Javier
 # Co-Author: David Tran
 # Date: September 22nd, 2013
@@ -19,7 +19,6 @@ class ClientExtreme
 
   # Socket is listening to the user specified address
   socket = TCPSocket.new(server_ip, port)
-
 
   puts "What would you like to do?"
   response = gets.to_s.upcase.chomp
@@ -42,7 +41,6 @@ class ClientExtreme
     puts "What is the filename being uploaded?"
     filename = gets.chomp
     socket.puts filename
-
     # It reads through the content of the file so to be uploaded
     file = File.open((File.basename(filename)), 'r')
     fileContents = file.read

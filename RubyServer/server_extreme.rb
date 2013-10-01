@@ -13,12 +13,12 @@ class ServerExtreme
 
 
   server = TCPServer.new('127.0.0.1', 7005)
-  puts "Server On..."
+  puts 'Server On...'
 
 
   # Begins listening to multiple clients on the specified address
   loop {
-    puts "Thread Starting..."
+    puts 'Thread Starting...'
     Thread.start(server.accept) do |client|
 
 
@@ -32,20 +32,22 @@ class ServerExtreme
         filename = client.gets
         puts "Reading contents of #{filename}"
         raw_data = client.read
+        # It iterates through the file and saves the data that the client had sent (upload).
         File.open("./#{filename}", 'w+') do |file|
           file.write(raw_data)
           file.close
-          end
+        end
          client.puts "File Sent"
       # Server is responding to "GET" request for a file to be sent
       elsif request == "GET"
         filename = client.gets.chomp
         puts "Client Requested: #{filename}"
         puts "Sending File..."
+        # Reads through the file then delivers the file to the client (download).
         file = File.open(filename, 'r+')    # Read - binary
-        fileContents = file.read
-        puts fileContents
-        client.puts(fileContents)
+        contents = file.read
+        puts contents
+        client.puts(contents)
       end
 
 
