@@ -2,3 +2,5 @@
 /JavaServer/build/
 /JavaClient/build/
 /JavaClient/nbproject/private/
+/JavaClient/dist/
+/JavaServer/dist/
